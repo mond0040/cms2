@@ -1,0 +1,14 @@
+footer {
+    position: relative;
+}
+
+.region-footer {
+    position: relative;
+}
+
+body.path-frontpage .region-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

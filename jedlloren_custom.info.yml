@@ -1,0 +1,23 @@
+name:                 Jed Lloren Custom
+type:                 theme
+description:          Custom theme to be used for Jed Lloren.
+version:              v1.0.0
+package:              Core
+core:                 8.x
+base theme:           classy
+screenshot:           src/assets/jed-lloren-logo-with-gradient.png
+logo:                 src/assets/jed-lloren-logo-without-gradient.png
+
+#Libraries
+libraries:
+  - jedlloren_custom/global
+
+#CKEditor styles
+ckeditor_stylesheets:
+  - dist/css/ckeditor.css
+
+#Regions
+regions:
+  header:             Header
+  content:            Content
+  footer:             Footer

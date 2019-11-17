@@ -1,0 +1,44 @@
+<?php
+
+use \Drupal\block_content\BlockContentInterface;
+
+function jedlloren_custom_preprocess_block(&$variables) {
+    $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['theme_path'] = base_path() . $variables['directory'];
+    
+    // Add block type class.
+    if (!empty($variables['content']['#block_content'])) {
+        // Get bundle/block type.
+        $bundle = $variables['content']['#block_content']->bundle();
+        // Set classname.
+        $variables['attributes']['class'][] = 'block--' . str_replace('_', '-', $bundle);
+        
+        if ($bundle == 'call_out') {
+            if (isset($variables['content']['field_link']['0']['#url'])) {
+                $variables['link_var'] = $variables['content']['field_link']['0']['#url'];
+                
+                // We now unset the field link so it doesnt show up with the label.
+                unset($variables['content']['field_link']);
+            }
+        }
+    }
+
+    $content = $variables['elements']['content'];
+    if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
+        switch ($content['#block_content']->bundle()) {
+            case 'banner':
+                $variables['#attached']['library'][] = 'jedlloren_custom/banner';
+                break;
+            case 'hero':
+                $variables['#attached']['library'][] = 'jedlloren_custom/hero-buttons';
+                break;
+            case 'footer_block':
+                $variables['#attached']['library'][] = 'jedlloren_custom/social-media';
+                $variables['#attached']['library'][] = 'jedlloren_custom/copyright';
+                break;
+            case 'gallery_card':
+                $variables['#attached']['library'][] = 'jedlloren_custom/gallery-card';
+                break;
+        }
+    }
+}

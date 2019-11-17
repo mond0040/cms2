@@ -1,0 +1,67 @@
+# css file to show on all pages
+global:
+  version: VERSION
+  css:
+    theme:
+      dist/css/styles.css: {}
+
+# Included polyfill globally for ES6 partial backwards compatibility with ie10+.
+# Make sure to include as a dependency for any js files that use ES6
+ES6-polyfill:
+  version: 1.x
+  js:
+    libraries/polyfill/polyfill.js: {}
+
+banner:
+  version: 1.x
+  js:
+    dist/js/banner.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+hero-buttons:
+  version: 1.x
+  js:
+    dist/js/hero-buttons.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+social-media:
+  version: 1.x
+  js:
+    dist/js/social-media.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+copyright:
+  version: 1.x
+  js:
+    dist/js/copyright.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+gallery-card:
+  version: 1.x
+  js:
+    dist/js/gallery-card.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+# USED AS AN EXAMPLE ONLY
+# Add the js files to the src folder in the folder that best fits.
+# This will compile the file into the dist/js directory.
+# example-js:
+#   version: 1.x
+#   js:
+#     dist/js/global.js: {}
+#   dependencies:
+#     - core/jquery
+#     - core/drupal
+#     - core/drupalSettings
+#     - core/jquery.once
+#     - core/modernizr

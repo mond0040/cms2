@@ -1,0 +1,35 @@
+.block--404-403-block {
+    @include container-900;
+    width: 90%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--color-grey-dark-1);
+
+    .error__heading {
+        font-size: 20rem;
+        text-align: center;
+        color: var(--color-primary);
+        font-weight: 300;
+
+        @include respond(xs-phone) {
+            font-size: 14rem;
+        }
+    }
+
+    .error__body {
+        font-size: 1.6rem;
+        color: var(--color-grey-light-1);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .error__button {
+        width: 20rem;
+        text-align: center;
+        margin: 9rem auto auto;
+    }
+}

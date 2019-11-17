@@ -1,0 +1,75 @@
+.header {
+    z-index: 201;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .region-header {
+        height: 8rem;
+        background-image: linear-gradient(to bottom, rgba(81, 216, 140, .9), rgba(10, 194, 90, .9));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .block-system-branding-block {
+            display: flex;
+            margin-left: 5rem;
+
+            @include respond(xs-phone) {
+                margin-left: 2rem;
+            }
+
+            .site-logo img {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            .site-name {
+                margin-left: 2rem;
+                font-size: 3rem;
+                margin-top: .5rem;
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-grey-light-1);
+                }
+            }
+        }
+
+        .menu--main {
+            // @media screen and (max-width: 1050px) {
+            //     display: none;
+            // }
+
+            & > * {
+                font-size: 2.25rem;
+            }
+
+            ul.menu {
+                display: flex;
+
+                li {
+
+                    a {
+                        text-decoration: none;
+                        color: var(--color-grey-light-1);
+                        padding: 0;
+                        border-bottom: 2px solid transparent;
+                        margin-right: 3rem;
+                        transition: all .2s;
+
+                        &:hover {
+                            border-bottom: 2px solid var(--color-secondary);
+                            padding: 5px;
+                        }
+                    }
+
+                    &:last-child {
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

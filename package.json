@@ -1,0 +1,40 @@
+{
+  "name": "base",
+  "version": "1.2.0",
+  "description": "Base Drupal 8 theme",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "adaptive-placeholders": "^1.1.5",
+    "babel-core": "^6.26.3",
+    "gulp-flatten": "^0.4.0",
+    "mappy-breakpoints": "^0.2.3",
+    "susy": "^2.2.14",
+    "typi": "^3.2.0"
+  },
+  "devDependencies": {
+    "ansi-colors": "^3.2.4",
+    "babel-preset-env": "^1.6.1",
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.26.3",
+    "fancy-log": "^1.3.3",
+    "file-system": "^2.2.2",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-cache": "^1.1.1",
+    "gulp-getdevdesktopdomain": "^1.0.8",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "modularscale-sass": "^3.0.8",
+    "sass-lint": "^1.12.1",
+    "sass-mq": "^5.0.0",
+    "simplecrawler": "^1.1.6",
+    "vnu-jar": "^18.11.5",
+    "yargs": "^13.2.2"
+  },
+  "author": "Adrian Rylski",
+  "license": "ISC"
+}

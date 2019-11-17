@@ -1,0 +1,112 @@
+.block--gallery-card {
+    @include container-900;
+    width: 90%;
+
+    .gallery__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+        overflow: hidden;
+        background: var(--color-grey-dark-1);
+        border-radius: 1rem;
+        border: 3px solid var(--color-grey-light-3);
+        box-shadow: 0 10px 1rem var(--color-grey-dark-3);
+
+        .gallery__image-container {
+            flex: 1 0 25%;
+            height: 30rem;
+            position: relative;
+            overflow: hidden;
+
+            @include respond(tab) {
+                flex: 1 0 50%;
+            }
+
+            @include respond(phone) {
+                flex: 1 0 100%;
+            }
+
+            article {
+                height: 100%;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(51, 51, 51, .7);
+                    transition: .3s all;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+
+                &:hover::before {
+                    background-color: rgba(51, 51, 51, 0);
+                }
+
+                &:hover img {
+                    transform: scale(1);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                    transition: all .3s;
+
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+.g__zoomed-image {
+    display: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 200;
+}
+
+body.user-logged-in .g__zoomed-image {
+    top: 60%;
+}
+
+.g__zoomed-background {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 199;
+    background-color: rgba(36, 39, 56, .7);
+
+    .g__zoomed-close {
+        display: none;
+
+        position: fixed;
+        top: 15%;
+        right: 5%;
+        font-size: 2.5rem;
+        color: var(--color-grey-light-4);
+        cursor: pointer;
+    }
+}

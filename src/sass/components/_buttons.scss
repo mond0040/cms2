@@ -1,0 +1,29 @@
+.btn {
+    outline: none;
+    padding: 2rem 5rem;
+    border-radius: 100px;
+    border: .2rem solid var(--color-primary);
+    font-size: 1.75rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        background-color: var(--color-primary-dark-2);
+        border: .2rem solid var(--color-primary-dark-2);
+        padding: 2rem 6rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-grey-light-2);
+    }
+}
+
+.btn-primary-filled {
+    background-color: var(--color-primary);
+}
+
+.btn-primary-outline {
+    background-color: rgba(0, 0, 0, 0);
+}

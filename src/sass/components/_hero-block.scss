@@ -1,0 +1,56 @@
+.block--hero {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+
+    width: 50%;
+
+    @include respond(tab) {
+        width: 70%;
+        left: 10rem;
+    }
+
+    @include respond(phone) {
+        width: 80%;
+        left: 5rem;
+        top: 13rem;
+    }
+
+    @include respond(xs-phone) {
+        left: 3rem;
+        top: 10rem;
+    }
+
+    .hero__motto {
+        font-size: 6rem;
+        font-weight: 300;
+        margin-bottom: 4rem;
+
+        @include respond(phone) {
+            font-size: 4.5rem;
+        }
+
+        span {
+            color: var(--color-primary);
+        }
+    }
+
+    .hero__button-container {
+        display: flex;
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
+
+        .hero__button-item {
+            margin-bottom: 1rem;
+
+            .hero__button-link {
+                @include respond(phone) {
+                    width: 20rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

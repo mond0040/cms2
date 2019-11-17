@@ -1,0 +1,22 @@
+@import 'sass/abstracts/mixins';
+
+@import 'sass/base/base';
+
+@import 'sass/components/research-card',
+        'sass/components/title',
+        'sass/components/banner',
+        'sass/components/publications-card',
+        'sass/components/gallery-card',
+        'sass/components/link-cards',
+        'sass/components/buttons',
+        'sass/components/contact-card',
+        'sass/components/footer-block',
+        'sass/components/hero-block',
+        'sass/components/login-form',
+        'sass/components/layout-builder',
+        'sass/components/404-403';
+
+@import 'sass/layout/header',
+        'sass/layout/footer',
+        'sass/layout/user-logged-in',
+        'sass/layout/login';

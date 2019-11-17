@@ -1,0 +1,98 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  Normal styles apply
+1800px+:        Big Desktop
+
+$breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == xs-phone {
+        @media only screen and (max-width: 23.75em) { @content };    // 380px
+    }
+
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    // 600px
+    }
+
+    @if $breakpoint == tab {
+        @media only screen and (max-width: 56.25em) { @content };   // 900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    // 1200px
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 112.5em) { @content };   // 1800px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };   // 1800px+
+    }
+}
+
+@mixin arrow() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    fill: var(--color-primary);
+    cursor: pointer;
+
+    transition: all .2s;
+}
+
+@mixin banner($imageToUse) {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    z-index: -1;
+
+    height: 40vh;
+    width: 100%;
+
+    @include respond(tab-port) {
+        position: relative;
+    }
+
+    @include respond(phone-land) {
+        position: relative;
+    }
+
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, .4)),
+        to(rgba(0, 0, 0, .4))),
+        url($imageToUse);
+    background-image: linear-gradient(
+        rgba(0, 0, 0, .4),
+        rgba(0, 0, 0, .4)),
+        url($imageToUse);
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin container-900() {
+    max-width: 900px;
+    margin: 2.5rem auto;
+}
+
+@mixin container-1050() {
+    max-width: 1050px;
+    margin: 2.5rem auto;
+}
+
+@mixin container-1200() {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+}

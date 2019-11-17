@@ -1,0 +1,86 @@
+.block--contact-card {
+    @include container-900;
+    width: 90%;
+
+    margin-bottom: 2rem;
+    padding: 3rem 4rem;
+    background: var(--color-grey-dark-1);
+    border-radius: 1rem;
+    border: 3px solid var(--color-grey-light-3);
+    box-shadow: 0 10px 1rem var(--color-grey-dark-3);
+
+    .contact__name,
+    .contact__email,
+    .contact__telephone {
+        text-align: center;
+    }
+
+    .contact__name {
+        margin-bottom: .5rem;
+        font-size: 2.5rem;
+    }
+
+    .contact__email,
+    .contact__telephone {
+        font-size: 1.75rem;
+    }
+
+    .contact__email {
+        margin-bottom: .25rem;
+    }
+
+    .contact__telephone {
+        margin-bottom: 3rem;
+    }
+
+    .contact__heading {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: var(--color-primary);
+        text-align: center;
+    }
+
+    .contact__image {
+
+        article {
+            border-radius: 50%;
+            shape-outside: circle();
+            float: left;
+            height: 80%;
+            margin-right: 4rem;
+            overflow: hidden;
+
+            @include respond(phone) {
+                float: none;
+                shape-outside: none;
+                height: 100%;
+                border-radius: 0;
+                overflow: visible;
+                display: flex;
+                justify-content: center;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            img {
+                width: 17rem;
+                height: 17rem;
+                border-radius: 50%;
+                transform: scale(1.3);
+
+                @include respond(phone) {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .contact__body {
+        font-size: 1.6rem;
+
+        p:last-child {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    }
+}

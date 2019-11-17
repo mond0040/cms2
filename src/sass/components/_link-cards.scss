@@ -1,0 +1,78 @@
+.block--link-cards {
+    @include container-1050;
+    width: 90%;
+
+    .link-cards__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .link-card {
+            flex: 0 0 30%;
+            height: 35rem;
+            // width: 28rem;
+            background: var(--color-grey-dark-1);
+            padding: 1rem 3rem;
+            margin: 2rem 1rem;
+            border-radius: 1rem;
+            border: 3px solid var(--color-grey-light-3);
+            box-shadow: 0 10px 1rem var(--color-grey-dark-3);
+
+            transition: all .2s;
+
+            @include respond(tab) {
+                flex: 0 0 45%;
+            }
+
+            @include respond(phone) {
+                flex: 0 0 90%;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            .paragraph {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+                height: 100%;
+
+                .link-card__icon {
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: 1px solid var(--color-grey-light-3);
+                    padding-bottom: 1rem;
+
+                    svg {
+                        height: 7rem;
+                        width: 7rem;
+                        margin-top: 1rem;
+                        fill: var(--color-primary);
+                    }
+                }
+
+                .link-card__body {
+                    text-align: center;
+                    color: var(--color-grey-light-1);
+                    font-size: 1.5rem;
+                }
+
+                .link-card__button {
+                    margin-right: 0;
+                    padding: 1rem 5rem;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        background-color: var(--color-primary-dark-2);
+                        border: .2rem solid var(--color-primary-dark-2);
+                        padding: 1rem 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
